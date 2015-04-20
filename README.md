@@ -1,5 +1,13 @@
 # React VM flower component
 
+
+[![Build Status](https://secure.travis-ci.org/flosse/react-vm-flower.svg?branch=master)](http://travis-ci.org/flosse/react-vm-flower)
+[![Dependency Status](https://gemnasium.com/flosse/react-vm-flower.svg)](https://gemnasium.com/flosse/react-vm-flower)
+[![NPM version](https://badge.fury.io/js/react-vm-flower.svg)](http://badge.fury.io/js/react-vm-flower)
+[![License](https://img.shields.io/npm/l/react-vm-flower.svg)](https://github.com/flosse/react-vm-flower/blob/master/LICENCE.txt)
+
+![flower](https://github.com/flosse/react-vm-flower/blob/master/examples/myFlower.svg)
+
 ## Usage
 
 ```
@@ -7,7 +15,7 @@ npm i react-vm-flower
 ```
 
 ```js
-var React   = require("react);
+var React   = require("react");
 var Flower  = require("react-vm-flower");
 
 var myFlower = svg(
