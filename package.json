@@ -1,0 +1,35 @@
+{
+  "name": "react-vm-flower",
+  "version": "0.1.0",
+  "description": "React.js component to render a VM flower with SVG",
+  "main": "lib/index.js",
+  "scripts": {
+    "lint": "coffeelint src/",
+    "prepublish": "coffee -o lib/ -c src/",
+    "test": "npm run lint && mocha --reporter spec --compilers coffee:coffee-script/register --recursive spec/*.spec.coffee"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/flosse/react-vm-flower"
+  },
+  "keywords": [
+    "react",
+    "svg",
+    "vm"
+  ],
+  "author": "Markus Kohlhase",
+  "license": "GPLv3",
+  "bugs": {
+    "url": "https://github.com/flosse/react-vm-flower/issues"
+  },
+  "homepage": "https://github.com/flosse/react-vm-flower",
+  "devDependencies": {
+    "chai": "^2.2.0",
+    "coffee-script": "^1.9.2",
+    "coffeelint": "^1.9.3",
+    "mocha": "^2.2.4"
+  },
+  "dependencies": {
+    "react": "^0.13.2"
+  }
+}
