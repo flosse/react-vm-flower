@@ -6,7 +6,7 @@
 [![NPM version](https://badge.fury.io/js/react-vm-flower.svg)](http://badge.fury.io/js/react-vm-flower)
 [![License](https://img.shields.io/npm/l/react-vm-flower.svg)](https://github.com/flosse/react-vm-flower/blob/master/LICENCE.txt)
 
-![flower](https://github.com/flosse/react-vm-flower/blob/master/examples/myFlower.svg)
+![flower](https://raw.githubusercontent.com/flosse/react-vm-flower/master/examples/myFlower.png)
 
 ## Usage
 
