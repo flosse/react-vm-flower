@@ -27,9 +27,15 @@ getTransformation = (deg, s=1) ->
   scale(#{s})
   "
 
+T = React.PropTypes
+
 module.exports = React.createClass
 
   displayName: "Flower"
+
+  propTypes:
+    scales: T.arrayOf T.number
+    size  : T.number
 
   getDefaultProps: ->
     scales: [ 1, 1, 1, 1, 1, 1 ]

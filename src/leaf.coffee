@@ -46,9 +46,16 @@ leafShape = (w, h) ->
 
 { path } = React.DOM
 
+T = React.PropTypes
+
 module.exports = React.createClass
 
   displayName: "Leaf"
+
+  propTypes:
+    color   : T.string
+    height  : T.number
+    witdh   : T.number
 
   getDefaultProps: ->
     color   : "#000"
