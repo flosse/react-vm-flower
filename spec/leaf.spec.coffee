@@ -23,6 +23,8 @@ describe "The leaf", ->
   it "should take transform properties", ->
     (render transform: 'scale(2)').should.have.string 'scale(2)'
 
-  it "should export its height and width", ->
-    Leaf.height.should.be.a 'number'
-    Leaf.width.should.be.a 'number'
+  it "should process the width and height property", ->
+    res = render width: 5, height: 7
+    res.should.match /d="M\s0,0\sC.*2\.5.*0,7.*-2\.5.*Z"/
+    res = render width: 10, height: 12
+    res.should.match /d="M\s0,0\sC.*5.*0,12.*-5.*Z"/

@@ -18,7 +18,6 @@ BLUEGRAY  = '#637a84'
 ANGLE     = 60
 SPACE     = 6
 
-SIZE      = 2 * Leaf.height + 2 * SPACE
 
 rad = (deg) -> deg * Math.PI / 180
 
@@ -34,29 +33,42 @@ module.exports = React.createClass
 
   getDefaultProps: ->
     scales: [ 1, 1, 1, 1, 1, 1 ]
+    size  : 2 * (100 + SPACE)
 
-  statics:
-    size  : SIZE
-    Leaf  : Leaf
+  statics: { Leaf }
 
   render: ->
     s = @props.scales
+    h = (@props.size / 2) - SPACE
+    w = 0.7 * h
     g transform: @props.transform,
       React.createElement Leaf,
-        transform: getTransformation 0, s[0]
-        color: RASPBERRY
+        transform : getTransformation 0, s[0]
+        color     : RASPBERRY
+        height    : h
+        width     : w
       React.createElement Leaf,
-        transform: getTransformation ANGLE, s[1]
-        color: BLUE
+        transform : getTransformation ANGLE, s[1]
+        color     : BLUE
+        height    : h
+        width     : w
       React.createElement Leaf,
-        transform: getTransformation 2 *ANGLE, s[2]
-        color: BLUEGRAY
+        transform : getTransformation 2 *ANGLE, s[2]
+        color     : BLUEGRAY
+        height    : h
+        width     : w
       React.createElement Leaf,
-        color: GREEN
-        transform: getTransformation 3 *ANGLE, s[3]
+        color     : GREEN
+        transform : getTransformation 3 *ANGLE, s[3]
+        height    : h
+        width     : w
       React.createElement Leaf,
-        color: YELLOW
-        transform: getTransformation 4 *ANGLE, s[4]
+        color     : YELLOW
+        transform : getTransformation 4 *ANGLE, s[4]
+        height    : h
+        width     : w
       React.createElement Leaf,
-        transform: getTransformation 5 *ANGLE, s[5]
-        color: PINK
+        transform : getTransformation 5 *ANGLE, s[5]
+        color     : PINK
+        height    : h
+        width     : w

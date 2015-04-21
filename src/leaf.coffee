@@ -5,23 +5,20 @@ Copyright 2015 (c) Markus Kohlhase <mail@markus-kohlhase.de>
 
 React = require "react"
 
-WIDTH  = 70
-HEIGHT = 100
+leafShape = (w, h) ->
 
-DELTA  = WIDTH / 2 * 0.53
-P0 =
-  x: 0
-  y: 0
+  DELTA  = w / 2 * 0.53
+  P0 =
+    x: 0
+    y: 0
 
-P1 =
-  x: WIDTH/2
-  y: 0.65* HEIGHT
+  P1 =
+    x: w/2
+    y: 0.65* h
 
-P2 =
-  x: 0
-  y: HEIGHT
-
-LEAF_SHAPE =
+  P2 =
+    x: 0
+    y: h
 
   # move to P0
   "M #{P0.x},#{P0.y} "            +
@@ -51,17 +48,15 @@ LEAF_SHAPE =
 
 module.exports = React.createClass
 
-  statics:
-    width : WIDTH
-    height: HEIGHT
-
   displayName: "Leaf"
 
   getDefaultProps: ->
-    color: "#000"
+    color   : "#000"
+    height  : 100
+    witdh   : 70
 
   render: ->
     path
-      d         : LEAF_SHAPE
+      d         : leafShape @props.width, @props.height
       fill      : @props.color
       transform : @props.transform

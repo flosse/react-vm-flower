@@ -26,9 +26,6 @@ describe "The flower", ->
   it "should export the Leaf component", ->
     Flower.Leaf.should.be.a 'function'
 
-  it "should export its size", ->
-    Flower.size.should.be.a 'number'
-
   it "should set some space between the the leaves", ->
     res = render().match ///
         translate\(
