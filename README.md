@@ -17,17 +17,19 @@ npm i react-vm-flower
 ```js
 var React   = require("react");
 var Flower  = require("react-vm-flower");
+var radius  = 100;
 
 var myFlower = svg(
   {
-    viewBox: "0 0 " + Flower.size + " " + Flower.size,
+    viewBox: "0 0 " + 2 * radius + " " + 2 * radius,
     width: "200px"
   },
   g({
-      transform: "translate(" + Flower.size / 2 + "," + Flower.size / 2 + ")"
+      transform: "translate(" + radius + "," + radius + ")"
     },
     React.createElement(Flower, {
       scales: [0.3, 0.7, 0.6, 0.9, 0.7, 0.7]
+      size: 2 * radius
     })
   )
 );
