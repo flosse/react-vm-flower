@@ -16,16 +16,9 @@ RASPBERRY = '#aa386b'
 BLUEGRAY  = '#637a84'
 
 ANGLE     = 60
-SPACE     = 6
 
 
 rad = (deg) -> deg * Math.PI / 180
-
-getTransformation = (deg, s=1) ->
-  "translate(#{SPACE * Math.cos rad deg},#{SPACE * Math.sin rad deg}) \
-  rotate(#{deg-90}) \
-  scale(#{s})
-  "
 
 T = React.PropTypes
 
@@ -36,45 +29,55 @@ module.exports = React.createClass
   propTypes:
     scales: T.arrayOf T.number
     size  : T.number
+    space : T.number
 
   getDefaultProps: ->
     scales: [ 1, 1, 1, 1, 1, 1 ]
-    size  : 2 * (100 + SPACE)
+    size  : 100
 
   statics: { Leaf }
 
+  getTransformation: (i, space) ->
+    deg = i * ANGLE
+    "translate(#{space * Math.cos rad deg},#{space * Math.sin rad deg}) \
+    rotate(#{deg-90}) \
+    scale(#{@props.scales[i]})"
+
+  getSpace: -> if (s = @props.space)? then s else @props.size * 0.03
+
   render: ->
+    space = @getSpace()
     s = @props.scales
-    h = (@props.size / 2) - SPACE
+    h = (@props.size / 2) - space
     w = 0.7 * h
     g transform: @props.transform,
       React.createElement Leaf,
-        transform : getTransformation 0, s[0]
+        transform : @getTransformation 0, space
         color     : RASPBERRY
         height    : h
         width     : w
       React.createElement Leaf,
-        transform : getTransformation ANGLE, s[1]
+        transform : @getTransformation 1, space
         color     : BLUE
         height    : h
         width     : w
       React.createElement Leaf,
-        transform : getTransformation 2 *ANGLE, s[2]
+        transform : @getTransformation 2, space
         color     : BLUEGRAY
         height    : h
         width     : w
       React.createElement Leaf,
         color     : GREEN
-        transform : getTransformation 3 *ANGLE, s[3]
+        transform : @getTransformation 3, space
         height    : h
         width     : w
       React.createElement Leaf,
         color     : YELLOW
-        transform : getTransformation 4 *ANGLE, s[4]
+        transform : @getTransformation 4, space
         height    : h
         width     : w
       React.createElement Leaf,
-        transform : getTransformation 5 *ANGLE, s[5]
+        transform : @getTransformation 5, space
         color     : PINK
         height    : h
         width     : w

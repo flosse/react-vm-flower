@@ -27,7 +27,7 @@ describe "The flower", ->
     Flower.Leaf.should.be.a 'function'
 
   it "should set some space between the the leaves", ->
-    res = render().match ///
+    res = render(space:6).match ///
         translate\(
         [+-]?
         \d*
