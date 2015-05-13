@@ -28,7 +28,8 @@ var myFlower = svg(
       transform: "translate(" + radius + "," + radius + ")"
     },
     React.createElement(Flower, {
-      scales: [0.3, 0.7, 0.6, 0.9, 0.7, 0.7]
+      scales: [0.3, 0.7, 0.6, 0.9, 0.7, 0.7],
+      colors: ["blue", "f00", "rgba(0,255,0,0.3)]
       size: 2 * radius
     })
   )

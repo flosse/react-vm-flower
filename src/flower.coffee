@@ -8,15 +8,16 @@ Leaf  = require "./leaf"
 
 { g, path } = React.DOM
 
-GREEN     = '#96bf0c'
-YELLOW    = '#ffdd00'
-BLUE      = '#0099ad'
-PINK      = '#e56091'
-RASPBERRY = '#aa386b'
-BLUEGRAY  = '#637a84'
+COLORS = [
+  '#aa386b' # RASPBERRY
+  '#0099ad' # BLUE
+  '#637a84' # BLUEGRAY
+  '#96bf0c' # GREEN
+  '#ffdd00' # YELLOW
+  '#e56091' # PINK
+]
 
-ANGLE     = 60
-
+ANGLE = 60
 
 rad = (deg) -> deg * Math.PI / 180
 
@@ -28,6 +29,7 @@ module.exports = React.createClass
 
   propTypes:
     scales: T.arrayOf T.number
+    colors: T.arrayOf T.string
     size  : T.number
     space : T.number
 
@@ -39,9 +41,11 @@ module.exports = React.createClass
 
   getTransformation: (i, space) ->
     deg = i * ANGLE
+    s = @props.scales[i]
+    s ?= 1
     "translate(#{space * Math.cos rad deg},#{space * Math.sin rad deg}) \
     rotate(#{deg-90}) \
-    scale(#{@props.scales[i]})"
+    scale(#{s})"
 
   getSpace: -> if (s = @props.space)? then s else @props.size * 0.03
 
@@ -50,34 +54,12 @@ module.exports = React.createClass
     s = @props.scales
     h = (@props.size / 2) - space
     w = 0.7 * h
-    g transform: @props.transform,
+    leafs = for i in [0..5]
       React.createElement Leaf,
-        transform : @getTransformation 0, space
-        color     : RASPBERRY
+        key       : i
+        transform : @getTransformation i, space
+        color     : @props.colors?[i] or COLORS[i]
         height    : h
         width     : w
-      React.createElement Leaf,
-        transform : @getTransformation 1, space
-        color     : BLUE
-        height    : h
-        width     : w
-      React.createElement Leaf,
-        transform : @getTransformation 2, space
-        color     : BLUEGRAY
-        height    : h
-        width     : w
-      React.createElement Leaf,
-        color     : GREEN
-        transform : @getTransformation 3, space
-        height    : h
-        width     : w
-      React.createElement Leaf,
-        color     : YELLOW
-        transform : @getTransformation 4, space
-        height    : h
-        width     : w
-      React.createElement Leaf,
-        transform : @getTransformation 5, space
-        color     : PINK
-        height    : h
-        width     : w
+
+    g transform: @props.transform, leafs
