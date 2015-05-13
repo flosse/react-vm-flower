@@ -1,6 +1,6 @@
 {
   "name": "react-vm-flower",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "React.js component to render a VM flower with SVG",
   "main": "lib/index.js",
   "scripts": {
@@ -24,12 +24,12 @@
   },
   "homepage": "https://github.com/flosse/react-vm-flower",
   "devDependencies": {
-    "chai": "^2.2.0",
+    "chai": "^2.3.0",
     "coffee-script": "^1.9.2",
-    "coffeelint": "^1.9.3",
+    "coffeelint": "^1.9.6",
     "mocha": "^2.2.4"
   },
   "dependencies": {
-    "react": "^0.13.2"
+    "react": "^0.13.3"
   }
 }
