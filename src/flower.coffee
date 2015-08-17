@@ -9,12 +9,12 @@ Leaf  = require "./leaf"
 { g, path } = React.DOM
 
 COLORS = [
-  '#aa386b' # RASPBERRY
-  '#0099ad' # BLUE
-  '#637a84' # BLUEGRAY
   '#96bf0c' # GREEN
   '#ffdd00' # YELLOW
   '#e56091' # PINK
+  '#aa386b' # RASPBERRY
+  '#0099ad' # BLUE
+  '#637a84' # BLUEGRAY
 ]
 
 ANGLE = 60
