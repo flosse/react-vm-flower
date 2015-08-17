@@ -30,6 +30,7 @@
     "mocha": "^2.2.4"
   },
   "dependencies": {
-    "react": "^0.13.3"
+    "react": "^0.13.3",
+    "react-pure-render": "^1.0.2"
   }
 }

@@ -3,8 +3,9 @@ This program is distributed under the terms of the GPLv3 license.
 Copyright 2015 (c) Markus Kohlhase <mail@markus-kohlhase.de>
 ###
 
-React = require "react"
-Leaf  = require "./leaf"
+React     = require "react"
+Leaf      = require "./leaf"
+PureMixin = require "react-pure-render/mixin"
 
 { g, path } = React.DOM
 
@@ -26,6 +27,8 @@ T = React.PropTypes
 module.exports = React.createClass
 
   displayName: "Flower"
+
+  mixins: [ PureMixin ]
 
   propTypes:
     scales: T.arrayOf T.number

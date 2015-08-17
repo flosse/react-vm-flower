@@ -3,7 +3,8 @@ This program is distributed under the terms of the GPLv3 license.
 Copyright 2015 (c) Markus Kohlhase <mail@markus-kohlhase.de>
 ###
 
-React = require "react"
+React     = require "react"
+PureMixin = require "react-pure-render/mixin"
 
 leafShape = (w, h) ->
 
@@ -51,6 +52,8 @@ T = React.PropTypes
 module.exports = React.createClass
 
   displayName: "Leaf"
+
+  mixins: [ PureMixin ]
 
   propTypes:
     color   : T.string
