@@ -18,7 +18,7 @@
     "vm"
   ],
   "author": "Markus Kohlhase",
-  "license": "GPLv3",
+  "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/flosse/react-vm-flower/issues"
   },
