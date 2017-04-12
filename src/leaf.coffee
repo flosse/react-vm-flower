@@ -1,6 +1,6 @@
 ###
 This program is distributed under the terms of the GPLv3 license.
-Copyright 2015 (c) Markus Kohlhase <mail@markus-kohlhase.de>
+Copyright (c) 2015 - 2017 Markus Kohlhase <mail@markus-kohlhase.de>
 ###
 
 React     = require "react"

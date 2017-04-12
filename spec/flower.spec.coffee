@@ -1,10 +1,11 @@
 (require "chai").should()
 
-React   = require "react"
-Flower  = require "../src/flower"
+React           = require "react"
+ReactDOMServer  = require "react-dom/server"
+Flower          = require "../src/flower"
 
 render = (props) ->
-  React.renderToStaticMarkup React.createElement Flower, props
+  ReactDOMServer.renderToStaticMarkup React.createElement Flower, props
 
 describe "The flower", ->
 
