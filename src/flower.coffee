@@ -14,8 +14,8 @@ COLORS = [
   '#ffdd00' # YELLOW
   '#e56091' # PINK
   '#aa386b' # RASPBERRY
-  '#0099ad' # BLUE
   '#637a84' # BLUEGRAY
+  '#0099ad' # BLUE
 ]
 
 ANGLE = 60
