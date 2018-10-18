@@ -58,8 +58,8 @@ describe "The flower", ->
     res[1].should.have.string '#ffdd00'
     res[2].should.have.string '#e56091'
     res[3].should.have.string '#aa386b'
-    res[4].should.have.string '#0099ad'
-    res[5].should.have.string '#637a84'
+    res[4].should.have.string '#637a84'
+    res[5].should.have.string '#0099ad'
 
   it "should export the Leaf component", ->
     Flower.Leaf.should.be.a 'function'
